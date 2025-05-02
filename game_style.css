@@ -1,0 +1,178 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Apr 28, 2025, 3:04:42 PM
+    Author     : venky
+*/
+
+ /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0f172a;
+            background-image: radial-gradient(circle at 10% 20%, #1e293b 0%, #0f172a 100%);
+            color: #e2e8f0;
+        }
+        
+        /* Game Container */
+        #game-container {
+            position: relative;
+            width: 500px;
+            padding: 20px;
+            border-radius: 16px;
+            background-color: #1e293b;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 40px rgba(76, 175, 80, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        /* Game Title */
+        .game-title {
+            color: #4ade80;
+            font-size: 32px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        
+        /* Score Display */
+        #score-display {
+            color: #e2e8f0;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 8px 16px;
+            background-color: #334155;
+            border-radius: 8px;
+            border-left: 4px solid #4ade80;
+            width: 100%;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Game Canvas */
+        #game-canvas {
+            border: 3px solid #4ade80;
+            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(76, 175, 80, 0.3), inset 0 0 10px rgba(76, 175, 80, 0.1);
+            margin-bottom: 15px;
+            background-color: #0f172a;
+        }
+        
+        /* Controls Info */
+        .controls-info {
+            text-align: center;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #334155;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #cbd5e1;
+        }
+        
+        .key {
+            display: inline-block;
+            padding: 2px 8px;
+            margin: 0 3px;
+            background-color: #475569;
+            border-radius: 4px;
+            font-family: monospace;
+            box-shadow: 0 2px 0 #1e293b;
+        }
+        
+        /* Game Over Screen */
+        #game-over {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(15, 23, 42, 0.95);
+            color: white;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            display: none;
+            border: 2px solid #4ade80;
+            box-shadow: 0 0 40px rgba(76, 175, 80, 0.4);
+            width: 80%;
+            max-width: 300px;
+            backdrop-filter: blur(5px);
+            z-index: 100;
+        }
+        
+        #game-over h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #ef4444;
+            text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+        }
+        
+        #final-score {
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: #4ade80;
+        }
+        
+        /* Buttons */
+        #restart-btn {
+            background-color: #4ade80;
+            border: none;
+            color: #0f172a;
+            padding: 12px 24px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 18px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        #restart-btn:hover {
+            background-color: #22c55e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+        
+        #restart-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Menu Button */
+        #menu-btn {
+            background-color: #334155;
+            color: #e2e8f0;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: all 0.2s ease;
+        }
+        
+        #menu-btn:hover {
+            background-color: #475569;
+        }

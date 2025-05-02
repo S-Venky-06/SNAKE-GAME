@@ -1,0 +1,249 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Apr 28, 2025, 2:37:22 PM
+    Author     : venky
+*/
+
+:root {
+            --primary: #4ecca3;
+            --primary-dark: #3da58a;
+            --secondary: #0f3460;
+            --background: #1a1a2e;
+            --container: #16213e;
+            --text: #e6e6e6;
+            --text-secondary: #a8a8a8;
+            --danger: #e94560;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 500px;
+            background-color: var(--container);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(78, 204, 163, 0.2);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
+            50% { transform: translateY(-20px) rotateX(2deg) rotateY(2deg); }
+        }
+        
+        .title-container {
+            margin-bottom: 1.5rem;
+        }
+        
+        .snake-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            text-shadow: 0 0 15px rgba(78, 204, 163, 0.7);
+            animation: pulse 2s infinite alternate;
+        }
+        
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+        
+        .title {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            font-weight: 800;
+        }
+        
+        .subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        .menu {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .button {
+            background-color: var(--secondary);
+            color: var(--text);
+            padding: 1rem 0;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .button:hover::before {
+            left: 100%;
+        }
+        
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .button:active {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .new-game {
+            background-color: var(--primary);
+            color: var(--background);
+            font-weight: bold;
+        }
+        
+        .new-game:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        #exit {
+            background-color: var(--danger);
+        }
+        
+        .credits {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+        
+        /* Advanced background animation */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            opacity: 0;
+            animation: moveParticle linear infinite;
+            filter: drop-shadow(0 0 5px var(--primary));
+        }
+        
+        @keyframes moveParticle {
+            0% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translate(calc(100vw + 100px), calc(var(--randomY) * 1vh));
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 1.5rem;
+                width: 95%;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+            
+            .snake-icon {
+                font-size: 3rem;
+            }
+            
+            .button {
+                padding: 0.8rem 0;
+                font-size: 1rem;
+            }
+        }
+        
+        /* Glow effect for container */
+        .container::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary), #00ff88, #00b3ff, var(--primary));
+            background-size: 400%;
+            z-index: -1;
+            border-radius: 22px;
+            opacity: 0;
+            transition: 0.5s;
+            animation: animate 20s linear infinite;
+        }
+        
+        .container:hover::after {
+            opacity: 0.15;
+        }
+        
+        @keyframes animate {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
