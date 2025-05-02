@@ -17,6 +17,6 @@ The game interface includes the following elements:
   - "Score History" button to view past scores.
   - "Exit" button to close the game.
 - **Instructions**: "Use arrow keys or WASD to control the snake. Eat food to grow and avoid collisions."
-- **Credits**: "Made By vs, chai, ani."
+- **Credits**: "Made By vs(myself)"
 
 
